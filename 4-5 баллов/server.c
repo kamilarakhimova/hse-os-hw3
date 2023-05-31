@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
         }
         client_sockets[i] = client_sockfd;
         // printf("server is handling client %s\n", inet_ntoa(clientaddr.sin_addr));
-        printf("Администратор (сервер) обрабатывает клиента %d.\n", i);
+        printf("Администратор (сервер) обрабатывает клиента %d.\n", i + 1);
         ++i;
         char message1[256];
         int symbols1 = read(client_sockets[i], message1, sizeof(message1));
