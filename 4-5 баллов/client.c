@@ -36,9 +36,9 @@ int main(int argc, char* argv[]) {
     sleep(2);
     int client_sex = rand() % 2;
     if (client_sex) {
-        printf("Пол клиента: женский\n");
+        printf("Пол клиента: женский.\n");
     } else {
-        printf("Пол клиента: мужский\n");
+        printf("Пол клиента: мужской.\n");
     }
     char message1[3];
     message1[0] = (client_sex + '0');
