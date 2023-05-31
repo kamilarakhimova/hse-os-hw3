@@ -38,29 +38,32 @@
 
 Сама программа расположилась [здесь](https://github.com/kamilarakhimova/hse-os-hw3/tree/main/4-5%20баллов/main.c).
 
-✔ Выбранная схема решения:
+✔ Примечания:
 
--
+Количество клиентов-гостей, желающих заселиться в отель задаётся переменной "MAX_CLIENTS" в программе "server.c":
 
+```
+#define MAX_CLIENTS 2
+```
 
-Запускаем работу сервера:
+✔ Запускаем работу сервера:
 
 ```
 ~/os-mini-hw1$ gcc -o server server.c
-~/os-mini-hw1$ ./server <port>
+~/os-mini-hw1$ ./server <server_port>
 ```
 
-Запускаем работу клиента (два раза):
+✔ Запускаем работу клиента столько раз, сколько у нас клиентов (в моём примере их 2):
 ```
 ~/os-mini-hw1$ gcc -o client client.c
-~/os-mini-hw1$ ./client <ip_address> <port>
+~/os-mini-hw1$ ./client <server_ip_address> <server_port>
 ```
 
 
 ✔ Результат выполнения программы сервера:
 
 ```
-server ip address = <ip_address>
+server ip address = <server_ip_address>
 Добро пожаловать на ночную экскурсию в отель.
 Вы задали количество клиентов, ожидающих заселения, равным: 2.
 Администратор (сервер) готов заселять клиентов.
@@ -88,7 +91,6 @@ server ip address = <ip_address>
 Пол клиента: мужской.
 Клиент заселился!
 ```
-
 
 ### ◉ Требования на 5 баллов:
 
