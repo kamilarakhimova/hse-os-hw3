@@ -113,7 +113,6 @@ int main(int argc, char* argv[]) {
         client_sockets[i] = client_sockfd;
         // printf("server is handling client %s\n", inet_ntoa(clientaddr.sin_addr));
         printf("Администратор (сервер) обрабатывает клиента %d.\n", i + 1);
-        ++i;
         char message1[256];
         int symbols1 = read(client_sockets[i], message1, sizeof(message1));
         if (symbols1 < 0) {
@@ -132,6 +131,7 @@ int main(int argc, char* argv[]) {
         int room_number = atoi(message2);
         printf("Администратор (сервер) заселяет клиента в комнату %d.\n", room_number + 1);  
         room_single_add(client_sex, room_number, single_rooms);
+        ++i;
         if (i == MAX_CLIENTS) {
             break;
         }
