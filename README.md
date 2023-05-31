@@ -36,7 +36,7 @@
 
 ### ◉ Требования на 4-5 баллов:
 
-Сама программа расположилась [здесь](https://github.com/kamilarakhimova/hse-os-hw3/tree/main/4-5%20баллов/main.c).
+Сами программы расположились [здесь](https://github.com/kamilarakhimova/hse-os-hw3/tree/main/4-5%20баллов).
 
 ✔ Задача:
 
