@@ -130,7 +130,7 @@ int main(int argc, char* argv[]) {
         }
         message2[symbols2] = '\0';
         int room_number = atoi(message2);
-        printf("Администратор (сервер) заселяет клиента в комнату %d\n", room_number);  
+        printf("Администратор (сервер) заселяет клиента в комнату %d.\n", room_number);  
         room_single_add(client_sex, room_number, single_rooms);
         if (i == MAX_CLIENTS) {
             break;
