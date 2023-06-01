@@ -12,7 +12,6 @@ void sigfunc(int sig) {
         return;
     }
     printf("\nПожарная эвакуация!! Всё, всё, пока!\n");
-    close(sockfd);
     exit (10);
 }
 
