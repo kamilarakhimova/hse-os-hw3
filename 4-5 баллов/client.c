@@ -33,27 +33,34 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
     printf("Клиент подошёл к администратору (серверу) оформляться на заселение!\n");
+    srand(time(NULL));
     sleep(2);
     int client_sex = rand() % 2;
-    if (client_sex) {
+    if (client_sex == 1) {
         printf("Пол клиента: женский.\n");
     } else {
         printf("Пол клиента: мужской.\n");
     }
-    char message1[3];
+    char message1[5];
     message1[0] = (client_sex + '0');
+
+    int place_num = rand() % 2;
+    int room_add;
+    if (place_num == 1) {
+        printf("Клиент хочет заселиться в одноместный номер.\n");
+        room_add = rand() % 10;
+    } else {
+        printf("Клиент хочет заселиться в двухместный номер.\n");
+        room_add = rand() % 15;
+    }
+    message1[1] = place_num + '0';
+    message1[2] = (room_add / 10) + '0';
+    message1[3] = (room_add % 10) + '0';
     if (write(sockfd, message1, strlen(message1)) < 0) {
         perror("can't send message 1");
         exit(1);
     }
-    int room_add = rand() % 10;
-    char message2[3];
-    message2[0] = (room_add / 10) + '0';
-    message2[1] = (room_add % 10) + '0';
-    if (write(sockfd, message2, strlen(message2)) < 0) {
-        perror("can't send message 2");
-        exit(1);
-    }
+    // printf("%d %d %d\n", client_sex, place_num, room_add);
     printf("Клиент отошёл от стойки регистрации.\n");
     close(sockfd);
     return 0;
