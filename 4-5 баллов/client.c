@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         perror("can't send message 2");
         exit(1);
     }
-    printf("Клиент заселился!\n");
+    printf("Клиент отошёл от стойки регистрации.\n");
     close(sockfd);
     return 0;
 }
