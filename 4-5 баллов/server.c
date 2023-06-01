@@ -120,17 +120,18 @@ int main(int argc, char* argv[]) {
             exit(1);
         }
         message1[symbols1] = '\0';
-        int client_sex = atoi(message1);
-        char message2[256];
-        int symbols2 = read(client_sockets[i], message2, sizeof(message2));
-        if (symbols2 < 0) {
-            perror("can't get message2");
-            exit(1);
+        int client_sex = message1[0] - '0';
+        int place_number = message1[1] - '0';
+        int room_number_first = message1[2] - '0';
+        int room_number_second = message1[3] - '0';
+        int room_number = room_number_first * 10 + room_number_second;
+        printf("Администратор (сервер) заселяет клиента в комнату %d.\n", room_number + 1);
+        // printf("%d %d %d\n", client_sex, place_number, room_number);
+        if (place_number == 1) {
+            room_single_add(client_sex, room_number, single_rooms);
+        } else {
+            room_double_add(client_sex, room_number, double_rooms);
         }
-        message2[symbols2] = '\0';
-        int room_number = atoi(message2);
-        printf("Администратор (сервер) заселяет клиента в комнату %d.\n", room_number + 1);  
-        room_single_add(client_sex, room_number, single_rooms);
         ++i;
         if (i == MAX_CLIENTS) {
             break;
